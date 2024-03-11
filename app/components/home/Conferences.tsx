@@ -8,17 +8,15 @@ import Image from "next/image";
 import Link from "next/link";
 const Conferences = () => {
   const { data, loading, error } = useQuery(GET_CONFERENCES);
-  console.log(" ~ Conferences ~ data:", data);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading conferences...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const conferences: Conference[] = data?.conferences || [];
+  const conferences = data?.conferences || [];
 
   return (
     <div className="relative w-full min-h-screen flex flex-col justify-center  overflow-hidden md:p-24 p-4">
       <div className="w-full max-w-3xl mx-auto">
-        {/* */}
         <h1 className="font-bold text-center text-3xl text-darkBlue mb-8">
           Conferences
         </h1>
@@ -37,12 +35,9 @@ const Conferences = () => {
                   {formatDate(conference.startDate, "longDate")}
                 </time>
               )}
-              {/* */}
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                 <Image src={thander} alt="thander" />
               </div>
-              {/* */}
-              {/* [calc(100%-4rem)] md:w-[calc(50%-2.5rem)] */}
               <div className="rounded-lg overflow-hidden bg-[#CDCDCD] shadow-md w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]    border border-slate-200 ">
                 <Link
                   href={`/conference/${conference.id}`}

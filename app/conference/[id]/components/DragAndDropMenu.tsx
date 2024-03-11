@@ -3,12 +3,18 @@ import updownarrow from "@/public/timeline/up-down-arrow.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ConferenceItems from "./ConferenceItems";
+type DragDropProps = {
+  conference: object;
+  setSelectedItem: (type: string) => void;
+  selectedItem: string;
+  menuDetails: Array<string>;
+};
 const DragAndDropMenu = ({
   conference,
   setSelectedItem,
   selectedItem,
   menuDetails,
-}) => {
+}: DragDropProps) => {
   const [items, setItems] = useState<string[]>([]);
 
   useEffect(() => {

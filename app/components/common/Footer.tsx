@@ -24,8 +24,8 @@ const Footer = () => {
           <Image className="w-6" src={WW} alt="world-wide" />
         </Link>
       </div>
-      
-      <h3 className="my-5">© 2033 Lamehive. All rights reserved.</h3>
+
+      <h3 className="my-5">© 2024 Lemon hive. All rights reserved.</h3>
     </footer>
   );
 };

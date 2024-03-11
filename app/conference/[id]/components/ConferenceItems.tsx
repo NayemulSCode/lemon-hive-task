@@ -6,7 +6,11 @@ import x from "@/public/speaker-social/x.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
-const ConferenceItems = ({ menuDetails, selectedItem }) => {
+type ConferenceProps = {
+  menuDetails: Array<string>;
+  selectedItem: string;
+};
+const ConferenceItems = ({ menuDetails, selectedItem }: ConferenceProps) => {
   return (
     <div className="box-border flex flex-col gap-6 md:bg-[#f9fafb] md:p-14">
       {menuDetails &&

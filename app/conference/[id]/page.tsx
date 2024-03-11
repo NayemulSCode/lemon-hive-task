@@ -10,8 +10,6 @@ type ConferenceProps = {
 const ConferenceDetails = ({ params }: ConferenceProps) => {
   const [selectedItem, setSelectedItem] = useState<string>("organizers");
   const [menuDetails, setMenuDetails] = useState<Array<any>>([]);
-  console.log("🚀 ~ ConferenceDetails ~ menuDetails:", menuDetails);
-  console.log("🚀 ~ ConferenceDetails ~ selectedItem:", selectedItem);
 
   const { data, loading, error } = useQuery(GET_CONFERENCE, {
     variables: {
