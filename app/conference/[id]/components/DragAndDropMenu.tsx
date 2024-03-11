@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ConferenceItems from "./ConferenceItems";
 type DragDropProps = {
-  conference: object;
+  conference: Object;
   setSelectedItem: (type: string) => void;
   selectedItem: string;
   menuDetails: Array<any>;
