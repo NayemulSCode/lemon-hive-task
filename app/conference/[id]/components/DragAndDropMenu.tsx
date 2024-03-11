@@ -56,7 +56,7 @@ const DragAndDropMenu = ({
               key={item} // Use item as key since it represents the property
               draggable
               onDragStart={(e) => handleDragStart(e, index)}
-              onDragOver={handleDragOver}
+              onDragOver={(e) => handleDragOver(e)}
               onDrop={(e) => handleDrop(e, index)}
               onClick={(e) => setSelectedItem(item)}
               className="flex justify-start items-center group transition-all mb-6 font-bold text-xl border rounded-md cursor-pointer p-2 m-1  hover:bg-yellow hover:text-white"
