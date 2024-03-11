@@ -7,14 +7,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 type ConferenceProps = {
-  menuDetails: Array<string>;
+  menuDetails: Array<any>;
   selectedItem: string;
 };
 const ConferenceItems = ({ menuDetails, selectedItem }: ConferenceProps) => {
   return (
     <div className="box-border flex flex-col gap-6 md:bg-[#f9fafb] md:p-14">
       {menuDetails &&
-        menuDetails.map((item) => {
+        menuDetails.map((item: any) => {
           return (
             <Fragment>
               {selectedItem !== "schedules" ? (
@@ -98,9 +98,9 @@ const ConferenceItems = ({ menuDetails, selectedItem }: ConferenceProps) => {
                     </h1>
                   </h1>
                   {item.intervals &&
-                    item.intervals.map((interval) => {
+                    item.intervals.map((interval: any, index: number) => {
                       return (
-                        <div>
+                        <div key={index}>
                           <p className="text-[#0A142F]">
                             Duration: {interval?.begin} - {interval?.end}
                           </p>

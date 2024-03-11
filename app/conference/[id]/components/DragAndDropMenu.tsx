@@ -7,7 +7,7 @@ type DragDropProps = {
   conference: object;
   setSelectedItem: (type: string) => void;
   selectedItem: string;
-  menuDetails: Array<string>;
+  menuDetails: Array<any>;
 };
 const DragAndDropMenu = ({
   conference,
@@ -50,7 +50,7 @@ const DragAndDropMenu = ({
   return (
     <div className="flex justify-center">
       <ul className="w-full">
-        {items.map((item, index) => (
+        {items.map((item: any, index: number) => (
           <div>
             <li
               key={item} // Use item as key since it represents the property
